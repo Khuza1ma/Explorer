@@ -1,0 +1,32 @@
+name: explorer
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.8
+  responsive_builder: ^0.7.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: HindSiliguri
+      fonts:
+        - asset: assets/fonts/HindSiliguri-Bold.ttf
+        - asset: assets/fonts/HindSiliguri-Light.ttf
+        - asset: assets/fonts/HindSiliguri-Medium.ttf
+        - asset: assets/fonts/HindSiliguri-Regular.ttf
+        - asset: assets/fonts/HindSiliguri-SemiBold.ttf
+
+  assets:
+    - assets/images/
