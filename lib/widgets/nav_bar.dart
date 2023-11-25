@@ -1,3 +1,4 @@
+import 'package:explorer/utils/app_images.dart';
 import 'package:explorer/utils/colors.dart';
 import 'package:explorer/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -15,23 +16,31 @@ class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
-      mobile: (BuildContext context) => MobileNavBar(),
-      desktop: (BuildContext context) => DesktopNavBar(),
+      mobile: (BuildContext context) => mobileNavBar(),
+      desktop: (BuildContext context) => desktopNavBar(),
     );
   }
 
-  Widget MobileNavBar() {
+  Widget mobileNavBar() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       height: 70,
-      child: const Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [Icon(Icons.menu)],
+        children: [
+          IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
+          navLogo(),
+        ],
       ),
     );
   }
 
-  Widget DesktopNavBar() {
+  Widget desktopNavBar() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       height: 70,
@@ -39,6 +48,7 @@ class _NavBarState extends State<NavBar> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           navLogo(),
+
           Row(
             children: [
               navButton('Features'),
@@ -47,7 +57,7 @@ class _NavBarState extends State<NavBar> {
               navButton('Feedback'),
             ],
           ),
-          Container(
+          SizedBox(
             height: 40,
             child: ElevatedButton(
               style: borderedButtonStyle,
@@ -63,10 +73,10 @@ class _NavBarState extends State<NavBar> {
     );
   }
 
-  Container navLogo() {
-    return Container(
+  Widget navLogo() {
+    return SizedBox(
       width: 110,
-      child: SvgPicture.asset('assets/images/logo.svg'),
+      child: SvgPicture.asset(AppImages.mainLogo),
     );
   }
 
