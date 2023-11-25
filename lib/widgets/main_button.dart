@@ -114,7 +114,7 @@ class MainButton extends StatelessWidget {
                   56,
                 ),
           ),
-          child: _child ?? SizedBox.shrink(),
+          child: _child ?? const SizedBox.shrink(),
         ),
       ),
     );

@@ -82,7 +82,7 @@ class _Container1State extends State<Container1> {
     padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: 200,
               width: w!/1.4,
               child: SvgPicture.asset(AppImages.landingImage,fit: BoxFit.contain),
